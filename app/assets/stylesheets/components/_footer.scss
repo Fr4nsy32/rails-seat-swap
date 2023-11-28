@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around; /* This will space your columns evenly */
+  width: 100%;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column; /* Aligns links in a column */
+  padding: 0 10px; /* Optional padding between columns */
+}
+
+.footer-column a {
+  margin-bottom: 5px; /* Spacing between links */
+  text-decoration: none; /* Optional styling */
+  /* Add more styles for your links as needed */
+}
