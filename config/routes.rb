@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :jobs, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:index, :update] do
+    resources :reviews, only: [:new, :create]
+  end
 end
