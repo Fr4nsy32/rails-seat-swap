@@ -170,16 +170,6 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.6.1)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    nokogiri (1.15.5-x86_64-darwin)
-=======
-    nokogiri (1.15.5-arm64-darwin)
->>>>>>> 4b7c7eb99bbc49d88bbac3db9dfb8551f7e3d25f
-=======
-    nokogiri (1.15.5-arm64-darwin)
->>>>>>> 394948bf247bb0d63d11a1b7b9773713e824bce3
-      racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -261,7 +251,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
-    stringio (3.0.9)
+    stringio (3.1.0)
     thor (1.3.0)
     tilt (2.3.0)
     timeout (0.4.1)
@@ -288,15 +278,6 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-<<<<<<< HEAD
-<<<<<<< HEAD
-  x86_64-darwin-22
-=======
-  arm64-darwin-23
->>>>>>> 4b7c7eb99bbc49d88bbac3db9dfb8551f7e3d25f
-=======
-  arm64-darwin-23
->>>>>>> 394948bf247bb0d63d11a1b7b9773713e824bce3
   x86_64-linux
 
 DEPENDENCIES
@@ -327,4 +308,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.16
+   2.4.22
