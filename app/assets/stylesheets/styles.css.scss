@@ -11,15 +11,17 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #87CEEB;
   color: #fff;
   padding: 10px 0;
+  text-align: center;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 nav ul li {
@@ -34,7 +36,7 @@ nav a {
 }
 
 #hero {
-  background-image: url('path/to/your/hero-image.jpg'); /* Set your desired hero background image */
+  background-image: url('path/to/your/hero-image.jpg'); /* background to be added*/
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -44,7 +46,7 @@ nav a {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #87CEEB;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -52,7 +54,7 @@ nav a {
 }
 
 #contact {
-  background-color: #333;
+  background-color: #87CEEB;
   color: #fff;
   padding: 50px 0;
   text-align: center;
