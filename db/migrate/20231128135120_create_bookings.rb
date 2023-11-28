@@ -4,9 +4,8 @@ class CreateBookings < ActiveRecord::Migration[7.1]
       t.string :status
       t.date :start_date
       t.date :end_date
-      t.integer :job_id
-      t.integer :user_id
       t.references :job, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
