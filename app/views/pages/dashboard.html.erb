@@ -1,0 +1,32 @@
+<h1>Dashboard</h1>
+
+<h2>My Bookings</h2>
+<% @my_bookings.each do |booking| %>
+  <p>Booking ID: <%= booking.id %></p>
+  <p>Booking Job: <%= booking.job.name %></p>
+  <p>Job Description: <%= booking.job.description %></p>
+  <p>Booking User ID: <%= booking.user.id %></p>
+<% end %>
+
+<h2>My Bookings Requests</h2>
+<% @my_bookings_requests.each do |booking| %>
+  <p>Booking Request ID: <%= booking.id %></p>
+  <!-- Add more details about the booking request here -->
+<% end %>
+
+<h2>My Jobs</h2>
+<% @my_jobs.each do |job| %>
+  <p>Job ID: <%= job.id %></p>
+  <!-- Add more details about the job here -->
+<% end %>
+
+<h2>My Reviews</h2>
+<% @my_reviews.each do |review| %>
+  <p>Review ID: <%= review.id %></p>
+  <!-- Add more details about the review here -->
+<% end %>
+
+<h2>My Credits</h2>
+<p>Credit: <%= @my_credits %></p>
+<!-- Add more details about the credits here -->
+<!-- END: Additional details for dashboard variables -->
