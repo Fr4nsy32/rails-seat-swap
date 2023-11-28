@@ -11,8 +11,8 @@ body {
 }
 
 header {
-  background-color: #87CEEB;
-  color: #fff;
+  background-color: #DCDCDC;
+  color: #000000;
   padding: 10px 0;
   text-align: center;
 }
@@ -31,14 +31,14 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   font-weight: bold;
 }
 
 #hero {
   background-image: url('path/to/your/hero-image.jpg'); /* background to be added*/
   background-size: cover;
-  color: #fff;
+  color: #000000;
   text-align: center;
   padding: 100px 0;
 }
@@ -46,16 +46,16 @@ nav a {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #87CEEB;
-  color: #fff;
+  background-color: #DCDCDC;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
 }
 
 #contact {
-  background-color: #87CEEB;
-  color: #fff;
+  background-color: #DCDCDC;
+  color: #000000;
   padding: 50px 0;
   text-align: center;
 }
