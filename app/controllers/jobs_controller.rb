@@ -4,13 +4,13 @@ class JobsController < ApplicationController
     @jobs = Job.all
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
   def new
     current_user
     @job = Job.new
-  end
-
-  def show
-    @job = Job.find(params[:id])
   end
 
   def create
@@ -21,6 +21,33 @@ class JobsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    current_user
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    current_user
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to @job, notice: "Job was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    current_user
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path, notice: "Job was successfully destroyed."
+  end
+
+
+  def my_jobs
+    @jobs = current_user.jobs
   end
 
   private
