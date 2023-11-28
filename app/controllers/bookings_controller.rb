@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def new
     current_user
+    @job = Job.find(params[:job_id])
     @booking = Booking.new
   end
 
