@@ -8,5 +8,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  height: auto; /* Maintain the aspect ratio */
+  width: 50%; /* Example percentage width */
+  max-width: 200px; /* Maximum size */
+  min-width: 100px; /* Minimum size */
 }
