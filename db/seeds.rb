@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Job.create([
+jobs_data = [
   { title: 'Graphic Designer', description: 'Creative role for a graphic designer.', price: 5500, location: 'New York City, New York', available_from: Date.today + 10.days, credit_to_earn: 3 },
   { title: 'Chief Ice Cream Taster', description: 'Scoop, taste, and rate the latest ice cream flavors.', price: 8000, location: 'Waterbury, Vermont', available_from: Date.today + 5.days, credit_to_earn: 5 },
   { title: 'Professional Pillow Fluffer', description: 'Ensure pillows are fluffy and dream-worthy at all times.', price: 6500, location: 'Paris, France', available_from: Date.today + 3.days, credit_to_earn: 4 },
@@ -15,4 +15,8 @@ Job.create([
   { title: 'Chief Napper', description: 'Lead daily napping sessions to boost team productivity.', price: 7500, location: 'London, United Kingdom', available_from: Date.today + 6.days, credit_to_earn: 4 },
   { title: 'Bubble Wrap Popper', description: 'Pop bubble wrap to maintain a stress-free office environment.', price: 6000, location: 'Seoul, South Korea', available_from: Date.today + 4.days, credit_to_earn: 3 },
   { title: 'Prime Minister', description: 'Lead the nation with wisdom and charisma.', price: 10000, location: '10 Downing Street, London', available_from: Date.today + 14.days, credit_to_earn: 8 }
-])
+]
+
+jobs_data.each do |job_data|
+  Job.create!(job_data)
+end
