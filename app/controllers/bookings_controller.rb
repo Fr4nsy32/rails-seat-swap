@@ -1,5 +1,23 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookingrecived = []
+    @bookingmade = []
+    @bookings = Booking.all
+    @bookings.each do |booking|
+      if booking.job.user == current_user
+        @bookingrecived << booking
+      elsif booking.user == current_user
+        @bookingmade << booking
+      end
+    end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @job = @booking.job
+  end
+
   def new
     current_user
     @job = Job.find(params[:job_id])
@@ -15,6 +33,14 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def confirm
+    raise
+    @booking = Booking.find(params[:id])
+    # @booking.status = "confirmed"
+    @booking.update(params[:status] = "confirmed"    )
+    redirect_to bookings_path
   end
 
   private

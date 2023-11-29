@@ -1,0 +1,14 @@
+<div>
+  <h1>Your request</h1>
+<% @bookingrecived.each do |booking| %>
+  <p><%= booking.job.title %> <%= link_to "See", booking_path(booking) %>
+    <%= link_to "Confirm", confirm_booking_path(booking) %></p></p>
+<% end %>
+</div>
+
+<div>
+  <h1>Your bookings</h1>
+  <% @bookingmade.each do |booking| %>
+    <%= booking.job.title %>
+  <% end %>
+</div>
