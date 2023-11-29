@@ -17,5 +17,5 @@ Rails.application.routes.draw do
       resources :reviews, only: [:new, :create, :edit, :update, :destroy]
     end
   end
-  patch "bookings/:id", to: "bookings#confirm", as: :confirm_bookings
+  resources :bookings, only: [:edit, :update]
 end
