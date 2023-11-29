@@ -1,8 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.where(user: current_user)
-                       .or(Booking.where(job: current_user.jobs))
+    @bookings = Booking.where(user: current_user).or(Booking.where(job: current_user.jobs))
   end
 
   def show
@@ -24,6 +23,14 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def confirm
+    raise
+    @booking = Booking.find(params[:id])
+    # @booking.status = "confirmed"
+    @booking.update(params[:status] = "confirmed"    )
+    redirect_to bookings_path
   end
 
   private
