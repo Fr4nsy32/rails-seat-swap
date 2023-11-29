@@ -9,6 +9,7 @@ class JobsController < ApplicationController
     @bookings = @job.bookings.includes(:reviews)
     @new_booking = @job.bookings.build
     @new_review = @job.reviews.build
+    @new_review = @new_booking.reviews.build
   end
 
   def new
