@@ -12,9 +12,7 @@ user_data = { email: 'example@example.com', password: 'password' }
 user = User.create!(user_data)
 
 =======
-# Assuming you have a User model with attributes like :email and :password
 
-# Create a user
 user_data = { email: 'example@example.com', password: 'password' }
 user = User.create!(user_data)
 
@@ -41,7 +39,6 @@ jobs_data = [
   { title: 'Space Tour Guide', description: 'Lead tours to space and provide insights on the wonders of the universe.', price: 11000, location: 'Cape Canaveral, Florida', available_from: Date.today + 20.days, credit_to_earn: 9 }
 ]
 
-# Associate each job with the created user
 jobs_data.each do |job_data|
   puts "Creating job"
   job_data[:user] = user
