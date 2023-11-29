@@ -1,0 +1,35 @@
+.jobs-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+
+  label, input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  input, button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    border: none;
+
+    &:hover {
+      background-color: #007bff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
