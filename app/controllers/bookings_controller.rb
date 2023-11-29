@@ -25,12 +25,25 @@ class BookingsController < ApplicationController
     end
   end
 
-  def confirm
-    raise
+  def edit
+    current_user
     @booking = Booking.find(params[:id])
-    # @booking.status = "confirmed"
-    @booking.update(params[:status] = "confirmed"    )
-    redirect_to bookings_path
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to dashboard_path, notice: "Job was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+    if @booking.status == "booked"
+      @booking.job.available = false
+      @booking.job.save
+    else
+      @booking.job.available = true
+      @booking.job.save
+    end
   end
 
   private

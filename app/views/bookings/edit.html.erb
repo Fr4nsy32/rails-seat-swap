@@ -1,0 +1,6 @@
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :start_date, disabled: true, hint: 'You cannot change the date.'  %>
+  <%= f.input :end_date, disabled: true, hint: 'You cannot change the date.'   %>
+  <%= f.input :status, collection: ['booked', 'cancelled', 'completed']%>
+  <%= f.button :submit %>
+<% end %>
