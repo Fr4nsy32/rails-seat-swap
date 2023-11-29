@@ -8,7 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Job.create([
-  { title: 'Web Developer', description: 'Exciting opportunity for a web developer.', price: 6000, location: 'San Francisco, California', available_from: Date.today + 7.days, credit_to_earn: 4 },
   { title: 'Graphic Designer', description: 'Creative role for a graphic designer.', price: 5500, location: 'New York City, New York', available_from: Date.today + 10.days, credit_to_earn: 3 },
   { title: 'Chief Ice Cream Taster', description: 'Scoop, taste, and rate the latest ice cream flavors.', price: 8000, location: 'Waterbury, Vermont', available_from: Date.today + 5.days, credit_to_earn: 5 },
   { title: 'Professional Pillow Fluffer', description: 'Ensure pillows are fluffy and dream-worthy at all times.', price: 6500, location: 'Paris, France', available_from: Date.today + 3.days, credit_to_earn: 4 },
