@@ -8,6 +8,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @bookings = @job.bookings.includes(:reviews)
     @new_booking = @job.bookings.build
+    @new_booking.save
     @new_review = @new_booking.reviews.build
   end
 
