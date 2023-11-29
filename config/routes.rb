@@ -14,7 +14,10 @@ Rails.application.routes.draw do
       get :my_jobs
     end
     resources :bookings, only: [:new, :create] do
-      resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+      resources :reviews, only: [:edit, :update, :destroy]
     end
+  end
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
   end
 end

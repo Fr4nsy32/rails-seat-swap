@@ -13,6 +13,8 @@
   <% end %>
 <% end %>
 
-<%= link_to "Add Review", new_job_booking_review_path(@job, @new_booking) %>
+<% if @my_booking %>
+<%= link_to "Add Review", new_booking_review_path(@my_booking) %>
+<% end %>
 
 <%= link_to "Back to Jobs", jobs_path %>
