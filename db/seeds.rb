@@ -32,3 +32,13 @@ jobs_data.each do |job_data|
   job_data[:user] = user
   Job.create!(job_data)
 end
+
+reviews_data = [
+  { job: jobs[0], description: 'Excellent graphic design skills! Loved working on this project.', rating: 5 },
+  { job: jobs[1], description: 'Good communication and attention to detail.', rating: 4 },
+]
+
+reviews_data.each do |review_data|
+  review_data[:user] = user
+  Review.create!(review_data)
+end
