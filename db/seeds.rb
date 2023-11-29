@@ -7,17 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-<<<<<<< HEAD
 user_data = { email: 'example@example.com', password: 'password' }
 user = User.create!(user_data)
 
-=======
-
-user_data = { email: 'example@example.com', password: 'password' }
-user = User.create!(user_data)
-
-# Jobs data
->>>>>>> ae08d496527c1bf06296eb28cbc5642a58ccd2bb
 jobs_data = [
   { title: 'Graphic Designer', description: 'Creative role for a graphic designer.', price: 5500, location: 'New York City, New York', available_from: Date.today + 10.days, credit_to_earn: 3 },
   { title: 'Chief Ice Cream Taster', description: 'Scoop, taste, and rate the latest ice cream flavors.', price: 8000, location: 'Waterbury, Vermont', available_from: Date.today + 5.days, credit_to_earn: 5 },
@@ -25,12 +17,7 @@ jobs_data = [
   { title: 'Pet Detective', description: 'Track down missing toys and solve pet mysteries.', price: 7000, location: 'Tokyo, Japan', available_from: Date.today + 8.days, credit_to_earn: 4 },
   { title: 'Chief Napper', description: 'Lead daily napping sessions to boost team productivity.', price: 7500, location: 'London, United Kingdom', available_from: Date.today + 6.days, credit_to_earn: 4 },
   { title: 'Bubble Wrap Popper', description: 'Pop bubble wrap to maintain a stress-free office environment.', price: 6000, location: 'Seoul, South Korea', available_from: Date.today + 4.days, credit_to_earn: 3 },
-<<<<<<< HEAD
   { title: 'Prime Minister', description: 'Lead the nation with wisdom and charisma.', price: 10000, location: '10 Downing Street, London', available_from: Date.today + 14.days, credit_to_earn: 8 },
-=======
-  { title: 'Prime Minister', description: 'Lead the nation with wisdom and charisma.', price: 10000, location: '10 Downing Street, London', available_from: Date.today + 14.days, credit_to_earn: 8 }
-  { title: 'Chocolate Taster', description: 'Indulge in the world of fine chocolates and provide taste reviews.', price: 7000, location: 'Brussels, Belgium', available_from: Date.today + 7.days, credit_to_earn: 5 },
->>>>>>> ae08d496527c1bf06296eb28cbc5642a58ccd2bb
   { title: 'Professional Netflix Watcher', description: 'Watch and rate the latest movies and TV shows for our entertainment recommendations.', price: 6000, location: 'Los Angeles, California', available_from: Date.today + 12.days, credit_to_earn: 4 },
   { title: 'Chief Emoji Designer', description: 'Create and design expressive emojis for a global messaging app.', price: 8500, location: 'Tokyo, Japan', available_from: Date.today + 9.days, credit_to_earn: 6 },
   { title: 'Extreme Adventure Tester', description: 'Test the limits of adventure activities and provide feedback.', price: 9000, location: 'Queenstown, New Zealand', available_from: Date.today + 15.days, credit_to_earn: 7 },

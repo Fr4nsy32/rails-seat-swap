@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :jobs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,9 +13,8 @@ Rails.application.routes.draw do
     collection do
       get :my_jobs
     end
-    resources :bookings, only: [:new, :create]
-  end
-  resources :bookings, only: [:index, :update] do
-    resources :reviews, only: [:new, :create]
+    resources :bookings, only: [:new, :create] do
+      resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+    end
   end
 end

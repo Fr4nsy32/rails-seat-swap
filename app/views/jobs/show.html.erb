@@ -4,3 +4,15 @@
 <p><strong>Location:</strong> <%= @job.location %></p>
 <p><strong>Available From:</strong> <%= @job.available_from %></p>
 <p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
+
+<h2>Reviews</h2>
+<% @job.bookings.each do |booking| %>
+  <% booking.reviews.each do |review| %>
+    <p><strong>Rating:</strong> <%= review.rating %></p>
+    <p><%= review.content %></p>
+  <% end %>
+<% end %>
+
+<%= link_to "Add Review", new_job_booking_review_path(@job, @booking) %>
+
+<%= link_to "Back to Jobs", jobs_path %>
