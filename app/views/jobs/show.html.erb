@@ -6,7 +6,7 @@
 <p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
 
 <h2>Reviews</h2>
-<% @job.bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
   <% booking.reviews.each do |review| %>
     <p><strong>Rating:</strong> <%= review.rating %></p>
     <p><%= review.content %></p>
