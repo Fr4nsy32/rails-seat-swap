@@ -7,8 +7,9 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
     @bookings = @job.bookings.includes(:reviews)
-    @new_booking = @job.bookings.build
-    @new_review = @job.reviews.build
+    @my_booking = @job.bookings.find_by(user: current_user)
+    @new_review = @my_booking.reviews.build if @my_booking.present?
+
   end
 
   def new
