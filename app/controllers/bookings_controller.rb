@@ -1,5 +1,14 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.where(user: current_user)
+                       .or(Booking.where(job: current_user.jobs))
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     current_user
     @job = Job.find(params[:job_id])
