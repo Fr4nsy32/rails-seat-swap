@@ -1,21 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookingrecived = []
-    @bookingmade = []
-    @bookings = Booking.all
-    @bookings.each do |booking|
-      if booking.job.user == current_user
-        @bookingrecived << booking
-      elsif booking.user == current_user
-        @bookingmade << booking
-      end
-    end
+    @bookings = Booking.where(user: current_user).or(Booking.where(job: current_user.jobs))
   end
 
   def show
     @booking = Booking.find(params[:id])
-    @job = @booking.job
   end
 
   def new

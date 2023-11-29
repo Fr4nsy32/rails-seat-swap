@@ -1,5 +1,19 @@
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.button :submit %>
+<h1>New Review</h1>
+
+<%= form_for [@job, @booking, @booking.reviews.build] do |f| %>
+  <div>
+    <%= f.label :rating %>
+    <%= f.number_field :rating, min: 1, max: 5 %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Review" %>
+  </div>
 <% end %>
+
+<%= link_to "Back to Job", job_path(@job) %>
