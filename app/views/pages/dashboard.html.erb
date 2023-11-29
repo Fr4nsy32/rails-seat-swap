@@ -1,32 +1,79 @@
-<h1>Dashboard</h1>
+<div class="container">
+    <h1>Dashboard</h1>
 
-<h2>My Bookings</h2>
-<% @my_bookings.each do |booking| %>
-  <p>Booking ID: <%= booking.id %></p>
-  <p>Booking Job: <%= booking.job.name %></p>
-  <p>Job Description: <%= booking.job.description %></p>
-  <p>Booking User ID: <%= booking.user.id %></p>
-<% end %>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>My Bookings</h2>
+            <% @my_bookings.each do |booking| %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Booking ID: <%= booking.id %></h5>
+                    <p class="card-text"><%= booking.job.title %></p>
+                    <p class="card-text"><%= booking.start_date %></p>
+                    <p class="card-text"><%= booking.end_date %></p>
+                    <p class="card-text"><%= booking.job.description %></p>
+                    <p class="card-text">Booking User :<%= booking.user.first_name %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
 
-<h2>My Bookings Requests</h2>
-<% @my_bookings_requests.each do |booking| %>
-  <p>Booking Request ID: <%= booking.id %></p>
-  <!-- Add more details about the booking request here -->
-<% end %>
+        <div class="col-md-6">
+            <h2>My Booking Requests</h2>
+            <% @my_bookings_requests.each do |booking| %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
+                    <p class="card-text"><%= booking.job.title %></p>
+                    <p class="card-text"><%= booking.start_date %></p>
+                    <p class="card-text"><%= booking.end_date %></p>
+                    <p class="card-text"><%= booking.job.description %></p>
+                    <p class="card-text"><%= booking.job.status %></p>
+                    <p class="card-text">Booking owner :<%= job.user.first_name %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
 
-<h2>My Jobs</h2>
-<% @my_jobs.each do |job| %>
-  <p>Job ID: <%= job.id %></p>
-  <!-- Add more details about the job here -->
-<% end %>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>My Jobs</h2>
+            <% @my_jobs.each do |job| %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Job ID: <%= job.id %></h5>
+                     <p class="card-text"><%= job.title %></p>
+                     <p class="card-text">Description: <%= job.description %></p>
+                     <p class="card-text">Location: <%= job.location %></p>
+                     <p class="card-text">Price: <%= job.price %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
 
-<h2>My Reviews</h2>
-<% @my_reviews.each do |review| %>
-  <p>Review ID: <%= review.id %></p>
-  <!-- Add more details about the review here -->
-<% end %>
+        <div class="col-md-6">
+            <h2>My Reviews</h2>
+            <% @my_reviews.each do |review| %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Review ID: <%= review.id %></h5>
+                    <p class="card-text">Description: <%= review.description %></p>
+                    <p class="card-text"><%= review.rating %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
 
-<h2>My Credits</h2>
-<p>Credit: <%= @my_credits %></p>
-<!-- Add more details about the credits here -->
-<!-- END: Additional details for dashboard variables -->
+    <div class="row">
+        <div class="col-12">
+            <h2>My Credits</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Current credit: <%= @my_credits %></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

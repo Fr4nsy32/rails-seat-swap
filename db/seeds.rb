@@ -21,7 +21,7 @@ jobs_data = [
   { title: 'Pet Detective', description: 'Track down missing toys and solve pet mysteries.', price: 7000, location: 'Tokyo, Japan', available_from: Date.today + 8.days, credit_to_earn: 4 },
   { title: 'Chief Napper', description: 'Lead daily napping sessions to boost team productivity.', price: 7500, location: 'London, United Kingdom', available_from: Date.today + 6.days, credit_to_earn: 4 },
   { title: 'Bubble Wrap Popper', description: 'Pop bubble wrap to maintain a stress-free office environment.', price: 6000, location: 'Seoul, South Korea', available_from: Date.today + 4.days, credit_to_earn: 3 },
-  { title: 'Prime Minister', description: 'Lead the nation with wisdom and charisma.', price: 10000, location: '10 Downing Street, London', available_from: Date.today + 14.days, credit_to_earn: 8 }
+  { title: 'Prime Minister', description: 'Lead the nation with wisdom and charisma.', price: 10000, location: '10 Downing Street, London', available_from: Date.today + 14.days, credit_to_earn: 8 },
   { title: 'Chocolate Taster', description: 'Indulge in the world of fine chocolates and provide taste reviews.', price: 7000, location: 'Brussels, Belgium', available_from: Date.today + 7.days, credit_to_earn: 5 },
   { title: 'Professional Netflix Watcher', description: 'Watch and rate the latest movies and TV shows for our entertainment recommendations.', price: 6000, location: 'Los Angeles, California', available_from: Date.today + 12.days, credit_to_earn: 4 },
   { title: 'Chief Emoji Designer', description: 'Create and design expressive emojis for a global messaging app.', price: 8500, location: 'Tokyo, Japan', available_from: Date.today + 9.days, credit_to_earn: 6 },
