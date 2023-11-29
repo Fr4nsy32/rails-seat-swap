@@ -8,7 +8,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Booking ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= booking.job.title %></p>
+                    <p class="card-text"><%= link_to job.title, job_path(job)%></p>
                     <p class="card-text"><%= booking.start_date %></p>
                     <p class="card-text"><%= booking.end_date %></p>
                     <p class="card-text"><%= booking.job.description %></p>
@@ -24,12 +24,13 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= booking.job.title %></p>
+                    <p class="card-text"><%= link_to job.title, job_path(job)%></p>
                     <p class="card-text"><%= booking.start_date %></p>
                     <p class="card-text"><%= booking.end_date %></p>
                     <p class="card-text"><%= booking.job.description %></p>
-                    <p class="card-text"><%= booking.job.status %></p>
-                    <p class="card-text">Booking owner :<%= job.user.first_name %></p>
+                    <p class="card-text"><%= booking.job.available %></p>
+                    <p class="card-text">Booking owner :<%= booking.job.user.first_name %></p>
+
                 </div>
             </div>
             <% end %>
@@ -43,7 +44,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Job ID: <%= job.id %></h5>
-                     <p class="card-text"><%= job.title %></p>
+                     <p class="card-text"><%= link_to job.title, job_path(job) %></p>
                      <p class="card-text">Description: <%= job.description %></p>
                      <p class="card-text">Location: <%= job.location %></p>
                      <p class="card-text">Price: <%= job.price %></p>
