@@ -7,13 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-# Assuming you have a User model with attributes like :email and :password
-
-# Create a user
 user_data = { email: 'example@example.com', password: 'password' }
 user = User.create!(user_data)
 
-# Jobs data
 jobs_data = [
   { title: 'Graphic Designer', description: 'Creative role for a graphic designer.', price: 5500, location: 'New York City, New York', available_from: Date.today + 10.days, credit_to_earn: 3 },
   { title: 'Chief Ice Cream Taster', description: 'Scoop, taste, and rate the latest ice cream flavors.', price: 8000, location: 'Waterbury, Vermont', available_from: Date.today + 5.days, credit_to_earn: 5 },
@@ -31,7 +27,6 @@ jobs_data = [
   { title: 'Space Tour Guide', description: 'Lead tours to space and provide insights on the wonders of the universe.', price: 11000, location: 'Cape Canaveral, Florida', available_from: Date.today + 20.days, credit_to_earn: 9 }
 ]
 
-# Associate each job with the created user
 jobs_data.each do |job_data|
   puts "Creating job"
   job_data[:user] = user

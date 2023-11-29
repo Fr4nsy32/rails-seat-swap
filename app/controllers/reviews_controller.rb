@@ -1,22 +1,25 @@
 class ReviewsController < ApplicationController
   def new
+    @job = Job.find(params[:job_id])
     @booking = Booking.find(params[:booking_id])
-    @review = Review.new
+    @review = @booking.reviews.build
   end
-  def create
+
+def create
+    @job = Job.find(params[:job_id])
     @booking = Booking.find(params[:booking_id])
-    @review = Review.new(review_params)
-    @review.booking = @booking
+    @review = @booking.reviews.build(review_params)
+
     if @review.save
-      redirect_to @review, notice: "Review was successfully created."
+      redirect_to job_path(@job), notice: "Review created successfully."
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:description, :rating)
+    params.require(:review).permit(:rating, :content)
   end
 end
