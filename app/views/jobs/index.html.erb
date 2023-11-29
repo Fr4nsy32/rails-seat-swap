@@ -3,6 +3,7 @@
 
   <div class="jobs-container">
     <% @jobs.each do |job| %>
+      <% if job.available == true %>
       <div class="job-card">
         <h3><%= link_to job.title, job_path(job) %></h3>
         <p><%= job.description %></p>
@@ -12,6 +13,7 @@
 
         <%# Add links or buttons for actions like applying, viewing details, etc. %>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>

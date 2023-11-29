@@ -4,12 +4,13 @@
 <p><strong>Location:</strong> <%= @job.location %></p>
 <p><strong>Available From:</strong> <%= @job.available_from %></p>
 <p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
+<%= link_to "Book now", new_job_booking_path(@job) %>
 
 <h2>Reviews</h2>
 <% @job.bookings.each do |booking| %>
   <% booking.reviews.each do |review| %>
     <p><strong>Rating:</strong> <%= review.rating %></p>
-    <p><%= review.content %></p>
+    <p><%= review.description %></p>
   <% end %>
 <% end %>
 
