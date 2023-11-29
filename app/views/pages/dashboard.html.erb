@@ -8,7 +8,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Booking ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= link_to job.title, job_path(job)%></p>
+                    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job)%></p>
                     <p class="card-text"><%= booking.start_date %></p>
                     <p class="card-text"><%= booking.end_date %></p>
                     <p class="card-text"><%= booking.job.description %></p>
@@ -24,7 +24,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= link_to job.title, job_path(job)%></p>
+                    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job)%></p>
                     <p class="card-text"><%= booking.start_date %></p>
                     <p class="card-text"><%= booking.end_date %></p>
                     <p class="card-text"><%= booking.job.description %></p>
