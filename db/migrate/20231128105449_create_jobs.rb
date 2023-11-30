@@ -5,7 +5,7 @@ class CreateJobs < ActiveRecord::Migration[7.1]
       t.text :description
       t.string :title
       t.integer :price
-      t.string :location
+      t.string :address
       t.boolean :available, :default => true
       t.date :available_from
       t.integer :credit_to_earn, null: false

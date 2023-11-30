@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_102931) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status"
+    t.integer "status", default: 0
     t.date "start_date"
     t.date "end_date"
     t.bigint "job_id", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_102931) do
     t.text "description"
     t.string "title"
     t.integer "price"
-    t.string "location"
+    t.string "address"
     t.boolean "available", default: true
     t.date "available_from"
     t.integer "credit_to_earn", null: false
@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_102931) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.string "title"
     t.text "description"
     t.integer "rating"
     t.bigint "booking_id", null: false
@@ -87,9 +88,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_102931) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "address"
-    t.integer "age"
-    t.integer "credit", default: 10
+    t.integer "credit", default: 1000
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
