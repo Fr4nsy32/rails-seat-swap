@@ -3,21 +3,14 @@
 
   <div class="jobs-container">
     <% @jobs.each do |job| %>
-      <% if job.available == true %>
-      <div class="job-card">
-        <h3><%= link_to job.title, job_path(job) %></h3>
-        <p><%= job.description %></p>
-        <p><strong>address:</strong> <%= job.address %></p>
-        <p><strong>Price:</strong> <%= job.price %></p>
-        <!-- Add more job details as needed -->
-
-        <%# Add links or buttons for actions like applying, viewing details, etc. %>
-      </div>
-    <% end %>
+      <% if job.available %>
+        <%= link_to job_path(job), class: "job-card" do %>
+          <h3><%= job.title %></h3>
+          <p class="scroll"><%= job.description %></p>
+          <p><%= job.address %></p>
+          <p><strong>$</strong> <%= job.price %></p>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
-
-<%# <%= link_to "Edit", edit_job_path %>
-   <%# <%= link_to "delete", job_path(@job), %>
-    <%# data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
