@@ -1,22 +1,33 @@
-<div class="container">
-  <h1>All Jobs</h1>
+<h1>All Jobs</h1>
 
-  <div class="jobs-container">
-    <% @jobs.each do |job| %>
-      <% if job.available %>
-        <%= link_to job_path(job), class: "job-card" do %>
-            <%= if job.photo.attached?
-          cl_image_tag job.photo.key, class: "job-card-img", alt: "Job Image"
-        else
-          image_tag 'empty_image_placeholder.png', class: "avatar", alt: "Job Image"
-        end %>
-          <%# <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
-          <h3><%= job.title %></h3>
-          <p class="scroll"><%= job.description %></p>
-          <p><%= job.address %></p>
-          <p><strong>$</strong> <%= job.price %></p>
+<div class="jobs-container">
+  <% @jobs.each do |job| %>
+    <% if job.available %>
+      <%= link_to job_path(job), class: "job-card" do %>
+        <% if job.photo.attached? %>
+          <%= image_tag url_for(job.photo), class: "job-card-img", alt: "Job Image" %>
+        <% else %>
+          <%= image_tag('empty_image_placeholder.png', class: "avatar", alt: "Job Image") %>
         <% end %>
+        <h3><%= job.title %></h3>
+        <p class="scroll"><%= job.description %></p>
+        <p><%= job.address %></p>
+        <p><strong>$</strong> <%= job.price %></p>
+
+        <!-- New code for user name and profile picture -->
+        <div class="user-details">
+         <% if job.user.present? %>
+         <%# Use the user's profile picture URL if available %>
+            <% if job.user.avatar.present? %>
+            <%= cl_image_tag(url_for(job.user.avatar), class: 'user-avatar', alt: 'User Avatar') %>
+            <% end %>
+        <!-- Concatenate first_name and last_name to get the full name -->
+            <p><%= "#{job.user.first_name} #{job.user.last_name}" %></p>
+         <% end %>
+        </div>
+        <!-- End of new code -->
+
       <% end %>
     <% end %>
-  </div>
+  <% end %>
 </div>
