@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :jobs, dependent: :destroy
   has_one_attached :photo
+  has_one_attached :avatar
   validates :first_name, :last_name, presence: true
 end
