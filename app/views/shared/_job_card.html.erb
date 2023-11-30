@@ -1,17 +1,19 @@
-<div class="card job-card">
-  <%= image_tag job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image' %>
-  <div class="card-body">
-    <h5 class="card-title"><%= job.title %></h5>
-    <p class="scroll"><%= job.description %></p>
-    <p><%= job.address %></p>
-    <p><strong>$</strong> <%= job.price %></p>
+<div class="job-card">
+  <%= link_to job_path(job) do %>
+    <div class="card-top">
+      <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
+    </div>
+    <div class="card-bottom">
+      <h3><%= job.title %></h3>
+      <p class="scroll"><%= job.description %></p>
+      <p><%= job.address %></p>
+      <p><strong>$</strong> <%= job.price %></p>
+    </div>
     <div class="user-info">
       <% if job.user.avatar.attached? %>
         <%= image_tag job.user.avatar.url, class: 'user-avatar', alt: 'User Avatar' %>
-      <% else %>
-        <%= image_tag 'default_avatar.png', class: 'user-avatar', alt: 'Default Avatar' %>
       <% end %>
       <p class="user-name"><%= job.user.first_name %></p>
     </div>
-  </div>
+  <% end %>
 </div>
