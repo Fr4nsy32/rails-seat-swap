@@ -1,7 +1,7 @@
 <h1><%= @job.title %></h1>
 <p><%= @job.description %></p>
 <p><strong>Price:</strong> <%= @job.price %></p>
-<p><strong>Location:</strong> <%= @job.location %></p>
+<p><strong>address:</strong> <%= @job.address %></p>
 <p><strong>Available From:</strong> <%= @job.available_from %></p>
 <p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
 <%= link_to "Book now", new_job_booking_path(@job) %>
