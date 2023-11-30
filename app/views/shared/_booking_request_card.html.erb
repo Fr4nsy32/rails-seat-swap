@@ -1,0 +1,12 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
+    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
+    <p class="card-text"><%= booking.start_date %></p>
+    <p class="card-text"><%= booking.end_date %></p>
+    <p class="card-text"><%= booking.job.description %></p>
+    <p class="card-text"><%= booking.job.available %></p>
+    <p class="card-text">Booking owner: <%= booking.job.user.first_name %></p>
+    <p><%= link_to "Confirm", edit_booking_path(booking) %></p>
+  </div>
+</div>

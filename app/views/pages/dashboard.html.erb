@@ -1,72 +1,33 @@
 <div class="container">
     <h1>Dashboard</h1>
-
     <div class="row">
         <div class="col-md-6">
-            <h2>My Bookings</h2>
+            <h2>All My Bookings</h2>
             <% @my_bookings.each do |booking| %>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Booking ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job)%></p>
-                    <p class="card-text"><%= booking.start_date %></p>
-                    <p class="card-text"><%= booking.end_date %></p>
-                    <p class="card-text"><%= booking.job.description %></p>
-                    <p class="card-text">Booking User :<%= booking.user.first_name %></p>
-                </div>
-            </div>
+           <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
             <% end %>
         </div>
-
         <div class="col-md-6">
             <h2>My Booking Requests</h2>
-            <% @my_bookings_requests.each do |booking| %>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
-                    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job)%></p>
-                    <p class="card-text"><%= booking.start_date %></p>
-                    <p class="card-text"><%= booking.end_date %></p>
-                    <p class="card-text"><%= booking.job.description %></p>
-                    <p class="card-text"><%= booking.job.available %></p>
-                    <p class="card-text">Booking owner :<%= booking.job.user.first_name %></p>
-                    <p><%= link_to "Confirm", edit_booking_path(booking) %></p>
-                </div>
-            </div>
+            <% @my_bookings_requests.each do |request| %>
+            <%= render partial: 'shared/booking_request_card', locals: { booking: request } %>
             <% end %>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-6">
             <h2>My Jobs</h2>
             <% @my_jobs.each do |job| %>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Job ID: <%= job.id %></h5>
-                     <p class="card-text"><%= link_to job.title, job_path(job) %></p>
-                     <p class="card-text">Description: <%= job.description %></p>
-                     <p class="card-text">address: <%= job.address %></p>
-                     <p class="card-text">Price: <%= job.price %></p>
-                </div>
-            </div>
+            <%= render partial: 'shared/job_card', locals: { job: job } %>
             <% end %>
         </div>
-
         <div class="col-md-6">
             <h2>My Reviews</h2>
             <% @my_reviews.each do |review| %>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Review ID: <%= review.id %></h5>
-                    <p class="card-text">Description: <%= review.description %></p>
-                    <p class="card-text"><%= review.rating %></p>
-                </div>
-            </div>
+            <%= render partial: 'shared/review_card', locals: { review: review } %>
             <% end %>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12">
             <h2>My Credits</h2>
