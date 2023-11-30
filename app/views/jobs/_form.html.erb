@@ -4,7 +4,9 @@
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :price %>
-    <%= f.input :available_from, as: :date, label: "Pick a date", input_html: { class: 'datepicker' } %> %>
+    <%= f.input :available_from,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :credit_to_earn %>
     <%= f.button :submit %>
   <% end %>
