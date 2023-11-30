@@ -1,27 +1,27 @@
-<h1><%= @job.title %></h1>
-<p><%= @job.description %></p>
-<p><strong>Price:</strong> <%= @job.price %></p>
-<p><strong>address:</strong> <%= @job.address %></p>
-<p><strong>Available From:</strong> <%= @job.available_from %></p>
-<p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
-<%= link_to "Book now", new_job_booking_path(@job) %>
+<div class="job-details-container">
+  <h1 class="job-title"><%= @job.title %></h1>
+  <p class="job-description"><%= @job.description %></p>
+  <p class="job-price"><strong>Price:</strong> <%= @job.price %></p>
+  <p class="job-address"><strong>Address:</strong> <%= @job.address %></p>
+  <p class="job-available-from"><strong>Available From:</strong> <%= @job.available_from %></p>
+  <p class="job-credit-to-earn"><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
+  <%= link_to "Book now", new_job_booking_path(@job), class: "btn btn-primary btn-sm" %>
 
-
-<div data-controller="toggle" class="my-2">
-  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Edit job</button>
-  <div data-toggle-target="toggleElement" class="d-none">>
-  <%= render "form", job: @job %>
+  <div data-controller="toggle" class="my-2">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary btn-sm">Edit job</button>
+    <div data-toggle-target="toggleElement" class="d-none">
+      <%= render "form", job: @job %>
+    </div>
   </div>
-</div>
 
-<h2>Reviews</h2>
-<% @job.bookings.each do |booking| %>
-  <% booking.reviews.each do |review| %>
-    <p><strong>Rating:</strong> <%= review.rating %></p>
-    <p><%= review.description %></p>
+  <h2>Reviews</h2>
+  <% @job.bookings.each do |booking| %>
+    <% booking.reviews.each do |review| %>
+      <p><strong>Rating:</strong> <%= review.rating %></p>
+      <p><%= review.description %></p>
+    <% end %>
   <% end %>
-<% end %>
-<%= link_to "Edit", edit_job_path %>
 
-
-<%= link_to "Back to Jobs", jobs_path %>
+  <%= link_to "Edit", edit_job_path(@job), class: "btn btn-outline-secondary btn-sm" %>
+  <%= link_to "Back to Jobs", jobs_path, class: "btn btn-outline-secondary btn-sm" %>
+</div>
