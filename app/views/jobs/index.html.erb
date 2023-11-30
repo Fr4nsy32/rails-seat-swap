@@ -4,13 +4,13 @@
   <div class="jobs-container">
     <% @jobs.each do |job| %>
       <% if job.available == true %>
-      <div class="job-card">
-        <h3><%= link_to job.title, job_path(job) %></h3>
+      <div><%= link_to job_path(job), class: "job-card" do %>
+        <h3><%= job.title %></h3>
         <p><%= job.description %></p>
-        <p><strong>Location:</strong> <%= job.location %></p>
-        <p><strong>Price:</strong> <%= job.price %></p>
+        <p><%= job.location %></p>
+        <p><strong>$</strong> <%= job.price %></p>
         <!-- Add more job details as needed -->
-
+        <% end %>
         <%# Add links or buttons for actions like applying, viewing details, etc. %>
       </div>
     <% end %>
