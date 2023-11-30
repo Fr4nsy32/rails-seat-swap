@@ -1,7 +1,7 @@
 <div class="job-card">
   <%= link_to job_path(job) do %>
     <div class="card-top">
-      <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
+      <%# <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
     </div>
     <div class="card-bottom">
       <h3><%= job.title %></h3>
@@ -10,10 +10,8 @@
       <p><strong>$</strong> <%= job.price %></p>
     </div>
     <div class="user-info">
-      <% if job.user.avatar.attached? %>
-        <%= image_tag job.user.avatar.url, class: 'user-avatar', alt: 'User Avatar' %>
-      <% end %>
-      <p class="user-name"><%= job.user.first_name %></p>
+
+      <%# <p class="user-name"><%= job.user.first_name %>
     </div>
   <% end %>
 </div>
