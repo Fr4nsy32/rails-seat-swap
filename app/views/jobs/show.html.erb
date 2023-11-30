@@ -6,13 +6,19 @@
   <p class="job-available-from"><strong>Available From:</strong> <%= @job.available_from %></p>
   <p class="job-credit-to-earn"><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
   <%= link_to "Book now", new_job_booking_path(@job), class: "btn btn-primary btn-sm" %>
-
-  <div data-controller="toggle" class="my-2">
-    <button data-action="click->toggle#fire" class="btn btn-outline-primary btn-sm">Edit job</button>
-    <div data-toggle-target="toggleElement" class="d-none">
-      <%= render "form", job: @job %>
-    </div>
-  </div>
+  <% if current_user == @job.user %>
+  <%= link_to job_path(@job),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash ms-2"></i><span>
+      <% end %>
+      <div data-controller="toggle" class="my-2">
+        <%# <button data-action="click->toggle#fire" class="btn btn-outline-primary">Edit job</button> %>
+        <i data-action="click->toggle#fire" class="fa-solid fa-pen-to-square ms-2 btn"></i>
+        <div data-toggle-target="editElement" class="d-none">>
+        <%= render "form", job: @job %>
+        </div>
+      </div>
+  <% end %>
 
   <h2>Reviews</h2>
   <% @job.bookings.each do |booking| %>
@@ -21,7 +27,4 @@
       <p><%= review.description %></p>
     <% end %>
   <% end %>
-
-  <%= link_to "Edit", edit_job_path(@job), class: "btn btn-outline-secondary btn-sm" %>
-  <%= link_to "Back to Jobs", jobs_path, class: "btn btn-outline-secondary btn-sm" %>
-</div>
+<% end %>

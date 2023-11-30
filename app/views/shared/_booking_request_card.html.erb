@@ -7,6 +7,17 @@
     <p class="card-text"><%= booking.job.description %></p>
     <p class="card-text"><%= booking.job.available %></p>
     <p class="card-text">Booking owner: <%= booking.job.user.first_name %></p>
-    <p><%= link_to "Confirm", edit_booking_path(booking) %></p>
+    <div data-controller="toggle" class="my-2">
+      <button data-action="click->toggle#book" class="btn btn-outline-primary">Manage Request</button>
+      <%# <i data-action="click->toggle#book" class="fa-solid fa-pen-to-square ms-2 btn"></i> %>
+      <div data-toggle-target="bookElement" class="d-none">
+      <%= simple_form_for booking do |f| %>
+        <%= f.input :start_date, disabled: true, hint: 'You cannot change the date.'  %>
+        <%= f.input :end_date, disabled: true, hint: 'You cannot change the date.'   %>
+        <%= f.input :status, collection: ['booked', 'cancelled', 'completed']%>
+        <%= f.button :submit %>
+      <% end %>
+      </div>
+    </div>
   </div>
 </div>
