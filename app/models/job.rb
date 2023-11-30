@@ -6,8 +6,6 @@ class Job < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
   has_one_attached :photo
-  has_one_attached :image
-  attribute :location, :string unless column_names.include?('location')
   # validates :avaible_from, presence: true
 end
 
