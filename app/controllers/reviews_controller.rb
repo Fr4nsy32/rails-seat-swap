@@ -27,3 +27,8 @@ def create
     params.require(:review).permit(:rating, :content)
   end
 end
+
+# add and commit in this branch
+# go to master to pull the latest master
+# come back to this branch and merge master into this branch
+# push this branch to github
