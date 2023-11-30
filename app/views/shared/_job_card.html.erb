@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Job ID: <%= job.id %></h5>
+    <p class="card-text"><%= link_to job.title, job_path(job) %></p>
+    <p class="card-text">Description: <%= job.description %></p>
+    <p class="card-text">Location: <%= job.location %></p>
+    <p class="card-text">Price: <%= job.price %></p>
+    <%= yield %>
+  </div>
+</div>
