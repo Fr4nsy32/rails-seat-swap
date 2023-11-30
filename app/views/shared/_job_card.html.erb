@@ -1,12 +1,19 @@
-<a href="<%= job_path(job) %>" class="card-link">
-  <div class="card mb-3 rounded">
-    <div class="card-body">
-      <h5 class="card-title">Job ID: <%= job.id %></h5>
-      <p class="card-text"><%= link_to job.title, job_path(job) %></p>
-      <p class="card-text">Description: <%= job.description %></p>
-      <p class="card-text">Location: <%= job.location %></p>
-      <p class="card-text">Price: <%= job.price %></p>
-      <%= yield %>
+<div class="job-card">
+  <%= link_to job_path(job) do %>
+    <div class="card-top">
+      <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
     </div>
-  </div>
-</a>
+    <div class="card-bottom">
+      <h3><%= job.title %></h3>
+      <p class="scroll"><%= job.description %></p>
+      <p><%= job.address %></p>
+      <p><strong>$</strong> <%= job.price %></p>
+    </div>
+    <div class="user-info">
+      <% if job.user.avatar.attached? %>
+        <%= image_tag job.user.avatar.url, class: 'user-avatar', alt: 'User Avatar' %>
+      <% end %>
+      <p class="user-name"><%= job.user.first_name %></p>
+    </div>
+  <% end %>
+</div>
