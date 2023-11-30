@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.job = Job.find(params[:job_id])
+    @booking.start_date = @booking.job.available_from
     if @booking.save
       redirect_to @booking, notice: "Booking was added was successfully created."
     else
@@ -40,10 +41,19 @@ class BookingsController < ApplicationController
     if @booking.status == "booked"
       @booking.job.available = false
       @booking.job.save
+      current_user.credit -= @booking.job.price
+      current_user.save
     else
       @booking.job.available = true
       @booking.job.save
     end
+  end
+
+  def destroy
+    current_user
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, notice: "Booking was successfully destroyed."
   end
 
   private
