@@ -5,6 +5,7 @@
     <% @jobs.each do |job| %>
       <% if job.available %>
         <%= link_to job_path(job), class: "job-card" do %>
+          <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
           <h3><%= job.title %></h3>
           <p class="scroll"><%= job.description %></p>
           <p><%= job.address %></p>
