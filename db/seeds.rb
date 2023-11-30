@@ -12,6 +12,11 @@
 # User.create!(email: 'test@test.com', password: 'password')
 # User.create!(email: 'test2@example.com', password: 'password')
 require 'date'
+Review.destroy_all
+Booking.destroy_all
+Job.destroy_all
+User.destroy_all
+
 User.create!(email: 'example@example.com', password: 'password', first_name: 'John', last_name: 'Doe')
 User.create!(email: 'example2@example.com', password: 'password', first_name:'Homer'  , last_name: 'Simpson')
 User.create!(email: 'example3@example.com', password: 'password', first_name:'Moe'  , last_name: 'Sislack')
@@ -41,6 +46,11 @@ jobs_data.each do |job_data|
   Job.create!(job_data)
 end
 
+Booking.create!(job: Job.all.sample, user: users.sample)
+Booking.create!(job: Job.all.sample, user: users.sample)
+Booking.create!(job: Job.all.sample, user: users.sample)
+
+Review.create!(booking: Booking.all.sample, description: 'Excellent graphic design skills! Loved working on this project.', rating: 5)
 # jobs = Job.all
 # Booking.create!(job: jobs[0], user: users[1], status: 'booked')
 
