@@ -20,7 +20,7 @@
         <% else %>
           <% 3.times do |index| %>
             <div class="carousel-item <%= 'active' if index.zero? %>">
-              <%= cl_image_tag('empty_image_placeholder.png', class: 'd-block mx-auto mt-2 w-75 h-75', alt: 'Empty Image') %>
+              <%= image_tag('empty_image_placeholder.png', class: 'd-block mx-auto mt-2 w-75 h-75', alt: 'Empty Image') %>
             </div>
           <% end %>
         <% end %>
