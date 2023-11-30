@@ -1,41 +1,48 @@
 <div class="container">
-    <h1>Dashboard</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <h2>All My Bookings</h2>
-            <% @my_bookings.each do |booking| %>
-           <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
-            <% end %>
-        </div>
-        <div class="col-md-6">
-            <h2>My Booking Requests</h2>
-            <% @my_bookings_requests.each do |request| %>
-            <%= render partial: 'shared/booking_request_card', locals: { booking: request } %>
-            <% end %>
-        </div>
+  <div class="row">
+    <div class="col-12 mb-4" style="margin-left: 0; padding-left: 0;">
+      <h1 style="margin-left: 0; padding-left: 0; font-family: 'Montserrat', sans-serif;">Dashboard</h1>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h2>My Jobs</h2>
-            <% @my_jobs.each do |job| %>
-            <%= render partial: 'shared/job_card', locals: { job: job } %>
-            <% end %>
-        </div>
-        <div class="col-md-6">
-            <h2>My Reviews</h2>
-            <% @my_reviews.each do |review| %>
-            <%= render partial: 'shared/review_card', locals: { review: review } %>
-            <% end %>
-        </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="font-family: 'Montserrat', sans-serif;">All My Bookings</h2>
+      <% @my_bookings.each do |booking| %>
+        <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
+      <% end %>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <h2>My Credits</h2>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Current credit: <%= @my_credits %></h5>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-6">
+      <h2 style="font-family: 'Montserrat', sans-serif;">My Booking Requests</h2>
+      <% @my_bookings_requests.each do |request| %>
+        <%= render partial: 'shared/booking_request_card', locals: { booking: request } %>
+      <% end %>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="font-family: 'Montserrat', sans-serif;">My Jobs</h2>
+      <% @my_jobs.each do |job| %>
+        <%= render partial: 'shared/job_card', locals: { job: job } %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2 style="font-family: 'Montserrat', sans-serif;">My Reviews</h2>
+      <% @my_reviews.each do |review| %>
+        <%= render partial: 'shared/review_card', locals: { review: review } %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2 style="font-family: 'Montserrat', sans-serif;">My Credits</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Current credit: <%= @my_credits %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

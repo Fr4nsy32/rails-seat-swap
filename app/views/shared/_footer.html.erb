@@ -1,14 +1,9 @@
 <div class="footer">
   <div class="footer-links">
-    <div class="footer-column"> <!-- first column of links -->
-      <a href="link1.html">Link 1</a>
-      <a href="link2.html">Link 2</a>
+      <%= link_to "Home", root_path %>
+      <%= link_to "See jobs", jobs_path %>
+      <%= link_to "Create job", new_job_path %>
     </div>
-    <div class="footer-column"> <!-- second column of links -->
-      <a href="link3.html">Link 3</a>
-      <a href="link4.html">Link 4</a>
-    </div>
-  </div>
   <div class="footer-text">
     <%= "Made with ❤️ by the team behind OffChangeX" %>
   </div>
