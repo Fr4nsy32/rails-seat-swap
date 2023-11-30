@@ -6,6 +6,14 @@
 <p><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
 <%= link_to "Book now", new_job_booking_path(@job) %>
 
+
+<div data-controller="toggle" class="my-2">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Edit job</button>
+  <div data-toggle-target="toggleElement" class="d-none">>
+  <%= render "form", job: @job %>
+  </div>
+</div>
+
 <h2>Reviews</h2>
 <% @job.bookings.each do |booking| %>
   <% booking.reviews.each do |review| %>
@@ -13,6 +21,7 @@
     <p><%= review.description %></p>
   <% end %>
 <% end %>
+<%= link_to "Edit", edit_job_path %>
 
 
 <%= link_to "Back to Jobs", jobs_path %>
