@@ -1,6 +1,8 @@
+<!-- Assuming this is in _job_card.html.erb -->
 <div class="job-card">
-  <%= link_to job_path(job) do %>
+  <%= link_to job_path(job), style: "text-decoration: none; color: black;" do %>
     <div class="card-top">
+      <!-- Add the class to the image tag if needed -->
       <%# <%= image_tag(job.image.present? ? job.image : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
     </div>
     <div class="card-bottom">
@@ -10,8 +12,6 @@
       <p><strong>$</strong> <%= job.price %></p>
     </div>
     <div class="user-info">
-
-      <%# <p class="user-name"><%= job.user.first_name %>
     </div>
   <% end %>
 </div>
