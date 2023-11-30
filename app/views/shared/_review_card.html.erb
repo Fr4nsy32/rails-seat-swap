@@ -2,6 +2,12 @@
   <div class="card-body">
     <h5 class="card-title">Review ID: <%= review.id %></h5>
     <p class="card-text">Description: <%= review.description %></p>
-    <p class="card-text"><%= review.rating %></p>
+    <div class="stars">
+      <% 5.times do |i| %>
+        <% if i < review.rating %>
+          <i class="fas fa-star filled"></i> <!-- Filled star -->
+        <% else %>
+          <i class="far fa-star"></i> <!-- Empty star -->
+        <% end %>
   </div>
 </div>

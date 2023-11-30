@@ -1,0 +1,8 @@
+.stars {
+  i {
+    color: gray; // Default color for empty stars
+    &.filled {
+      color: gold; // Color for filled stars
+    }
+  }
+}
