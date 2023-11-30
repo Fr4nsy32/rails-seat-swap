@@ -1,13 +1,15 @@
-<div class="card mb-3">
-  <div class="card-body">
-    <h5 class="card-title">Booking ID: <%= booking.id %></h5>
-    <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
-    <p class="card-text"><%= booking.start_date %></p>
-    <p class="card-text"><%= booking.end_date %></p>
-    <p class="card-text"><%= booking.job.description %></p>
-    <% if booking.job.user.present? %>
-      <p class="card-text">Booking User: <%= booking.user.first_name %></p>
-    <% end %>
-    <%= yield %>
+<a href="<%= job_path(booking.job) %>" class="card-link">
+  <div class="card mb-3 rounded">
+    <div class="card-body">
+      <h5 class="card-title">Booking ID: <%= booking.id %></h5>
+      <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
+      <p class="card-text"><%= booking.start_date %></p>
+      <p class="card-text"><%= booking.end_date %></p>
+      <p class="card-text"><%= booking.job.description %></p>
+      <% if booking.job.user.present? %>
+        <p class="card-text">Booking User: <%= booking.user.first_name %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
-</div>
+</a>
