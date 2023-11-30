@@ -1,11 +1,10 @@
 .footer {
   display: flex;
-  width: 100%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: white;
-  padding: 10px;
+  padding: 40px 0;
+  width: 100%;
   flex-shrink: 0;
 }
 
@@ -17,16 +16,20 @@
 .footer-links {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  align-items: center;
+  width: calc(100% - 80px);
+  margin-bottom: 20px;
 }
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
+@media (max-width: 768px) {
+  .footer-links {
+    width: calc(100% - 40px);
+  }
 }
 
-.footer-column a {
-  margin-bottom: 5px;
-  text-decoration: none;
+@media (max-width: 480px) {
+  .footer-links {
+    width: calc(100% - 20px);
+    flex-direction: column;
+  }
 }
