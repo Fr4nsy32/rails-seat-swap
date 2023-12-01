@@ -37,15 +37,14 @@
   .job-card-img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Add rounded corners if desired */
+    border-radius: 8px;
   }
 
   .back-to-jobs-link-container {
-    text-align: center; /* This will center the link */
-    margin-top: 1rem; /* Adjust as needed for space above the link */
+    text-align: center;
+    margin-top: 1rem;
   }
 
   .back-to-jobs-link {
-    display: inline-block; /* Allows the link to be centered by text-align */
-    /* ... other styles ... */
+    display: inline-block;
   }
