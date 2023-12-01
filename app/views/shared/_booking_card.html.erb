@@ -4,11 +4,11 @@
    when "cancelled" %>
   <div class="card-body cancelled">
   <% when "pending" %>
-  <div class="card-body border border-warning">
+  <div class="card-body pending">
   <% when "completed" %>
   <div class="card-body completed">
   <% when "booked" %>
-  <div class="card-body border border-info">
+  <div class="card-body booked">
   <% end %>
       <h5 class="card-title">Booking ID: <%= booking.id %>
       <%= link_to booking_path(booking),
