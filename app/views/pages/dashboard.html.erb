@@ -12,7 +12,7 @@
   <div class="tab-content" data-tabs-target="content">
     <div class="row">
       <div class="col-12">
-        <h2 style="font-family: 'Montserrat', sans-serif;">All My Bookings</h2>
+        <h2 class="dashboard-title">All My Bookings</h2>
         <div class="d-flex flex-wrap">
           <% @my_bookings.each do |booking| %>
             <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
