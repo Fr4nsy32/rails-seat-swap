@@ -15,16 +15,13 @@
   <body>
     <div class="content">
       <%= render "shared/navbar" %>
-      <%= yield %>
-      <%= render "shared/flashes" %>
-<<<<<<< HEAD
+        <div class= "container-fluid">
+          <%= yield %>
+          <%= render "shared/flashes" %>
+        </div>
     </div>
     <div class="footer">
       <%= render 'shared/footer' %>
     </div>
-=======
-      </div>
-    <%= render 'shared/footer' %>
->>>>>>> master
   </body>
 </html>
