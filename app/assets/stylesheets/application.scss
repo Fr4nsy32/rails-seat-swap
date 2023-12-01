@@ -76,3 +76,11 @@
     color: white;
   }
 }
+
+  .banner-container {
+    height: 400px;
+    background-image: url('assets/NY.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

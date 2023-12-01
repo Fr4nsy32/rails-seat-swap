@@ -13,15 +13,24 @@
   </head>
 
   <body>
-    <div class="content">
+    <div class="navbar-container">
       <%= render "shared/navbar" %>
-        <div class= "container-fluid">
-          <%= yield %>
-          <%= render "shared/flashes" %>
-        </div>
     </div>
+
+    <div class="banner-container">
+      <!-- Banner content goes here -->
+    </div>
+
+    <div class="content">
+      <div class="container-fluid">
+        <%= yield %>
+        <%= render "shared/flashes" %>
+      </div>
+    </div>
+
     <div class="footer">
       <%= render 'shared/footer' %>
     </div>
   </body>
 </html>
+
