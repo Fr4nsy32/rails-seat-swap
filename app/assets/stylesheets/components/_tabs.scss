@@ -1,0 +1,16 @@
+.tab {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+}
+.active-tab {
+  background-color: #eee;
+}
