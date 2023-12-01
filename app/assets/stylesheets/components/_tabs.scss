@@ -1,9 +1,13 @@
+.tab-container {
+  text-align: center;
+}
+
 .tab {
   display: inline-block;
-  margin-right: 10px;
+  margin: 0 10px; /* Adjust margin as needed */
   cursor: pointer;
   padding: 5px 10px;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   border-bottom: none;
 }
 
