@@ -30,52 +30,6 @@
   }
 
   @media (max-width: 768px) {
-    .jobs-form {
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
-      background-color: #f7f7f7;
-      border-radius: 10px;
-    }
-
-    label, input, button {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    input, button {
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #0056b3;
-      color: white;
-      font-weight: bold;
-      border: none;
-
-      &:hover {
-        background-color: #007bff;
-      }
-    }
-
-    @media (max-width: 768px) {
-      max-width: 100%;
-    }
-
-    .job-card-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px; /* Add rounded corners if desired */
-    }
-
-    .second-CTA a:hover {
-      color: #007bff; /* Change color on hover */
-      text-decoration: underline; /* Add underline on hover */
-    }
-
     padding: 1rem;
     max-width: 100%;
   }
@@ -83,10 +37,14 @@
   .job-card-img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Add rounded corners if desired */
+    border-radius: 8px;
   }
 
-  .second-CTA a:hover {
-    color: #007bff; /* Change color on hover */
-    text-decoration: underline; /* Add underline on hover */
+  .back-to-jobs-link-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .back-to-jobs-link {
+    display: inline-block;
   }
