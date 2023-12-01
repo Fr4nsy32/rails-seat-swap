@@ -7,7 +7,24 @@
       <p class="job-address"><strong>Address:</strong> <%= @job.address %></p>
       <p class="job-available-from"><strong>Available From:</strong> <%= @job.available_from %></p>
       <p class="job-credit-to-earn"><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
+       <% if current_user == @job.user %>
+      <%= link_to job_path(@job),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash ms-2"></i>
+      <% end %>
+      <div data-controller="toggle" class="my-2">
+        <i data-action="click->toggle#fire" class="fa-solid fa-pen-to-square ms-2"></i>
+        <div data-toggle-target="editElement" class="d-none">
+          <%= render "form", job: @job %>
+        </div>
+        </div>
+    <% else %>
+    <% if current_user.credit >= @job.price %>
       <%= link_to "Book now", new_job_booking_path(@job), class: "btn btn-primary btn-sm" %>
+      <% else %>
+      <%= link_to "Book now", new_job_booking_path(@job), class: "btn btn-primary btn-sm disabled" %><em class="ms-2 fw-light">Insufficent credit</em>
+      <% end %>
+      <% end %>
     </div>
 
     <!-- Image Carousel/Slider -->
@@ -15,7 +32,7 @@
       <div class="carousel-inner">
         <% if @job.photo.attached? %>
           <div class="carousel-item active">
-            <%= cl_image_tag(@job.photo.key, class: 'd-block mx-auto mt-2 w-75 h-75', alt: 'Job Image') %>
+            <%= cl_image_tag(@job.photo.key, class: 'd-block mx-auto mt-2 img-thumbnail', alt: 'Job Image') %>
           </div>
         <% else %>
           <% 3.times do |index| %>
@@ -36,18 +53,6 @@
     </div>
     <!-- End Image Carousel/Slider -->
 
-    <% if current_user == @job.user %>
-      <%= link_to job_path(@job),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-solid fa-trash ms-2"></i><span>
-      <% end %>
-      <div data-controller="toggle" class="my-2">
-        <i data-action="click->toggle#fire" class="fa-solid fa-pen-to-square ms-2 btn"></i>
-        <div data-toggle-target="editElement" class="d-none">
-          <%= render "form", job: @job %>
-        </div>
-      </div>
-    <% end %>
 
     <h2>Reviews</h2>
     <% @job.bookings.each do |booking| %>

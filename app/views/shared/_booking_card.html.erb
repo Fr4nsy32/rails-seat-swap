@@ -1,10 +1,10 @@
 <a href="<%= job_path(booking.job) %>" class="card-link">
   <div class="card mb-3 rounded">
     <div class="card-body">
-      <h5 class="card-title">Booking ID: <%= booking.id %></h5>
-       <%= link_to booking_path(booking),
+      <h5 class="card-title">Booking ID: <%= booking.id %>
+      <%= link_to booking_path(booking),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-solid fa-trash ms-2" id="del"></i><span>
+        <i class="fa-solid fa-trash ms-2" id="del"></i></h5>
       <% end %>
       <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
       <p class="card-text"><%= booking.start_date %></p>
