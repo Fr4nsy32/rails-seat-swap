@@ -10,8 +10,12 @@
       <p class="card-text"><%= booking.start_date %></p>
       <p class="card-text"><%= booking.end_date %></p>
       <p class="card-text"><%= booking.job.description %></p>
+      <p class="card-text">Status: <%= booking.status %></p>
       <% if booking.job.user.present? %>
-        <p class="card-text">Booking User: <%= booking.user.first_name %></p>
+      <p class="card-text">Booking User: <%= booking.user.first_name %></p>
+      <% end %>
+      <% if booking.completed? %>
+      <a href="<%= new_job_booking_review_path(booking.job, booking)%>" class= "card-link">Leave a review</a>
       <% end %>
       <%= yield %>
     </div>
