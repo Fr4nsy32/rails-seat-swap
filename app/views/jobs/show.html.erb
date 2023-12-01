@@ -30,10 +30,12 @@
     <!-- Image Carousel/Slider -->
     <div id="image-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <% if @job.photo.attached? %>
+        <% if @job.photos.present? %>
+            <% @job.photos.each do |photo| %>
           <div class="carousel-item active">
-            <%= cl_image_tag(@job.photo.key, class: 'd-block mx-auto mt-2 img-thumbnail', alt: 'Job Image') %>
+            <%= cl_image_tag(photo.key, class: 'd-block mx-auto mt-2 img-thumbnail', alt: 'Job Image') %>
           </div>
+            <% end %>
         <% else %>
           <% 3.times do |index| %>
             <div class="carousel-item <%= 'active' if index.zero? %>">

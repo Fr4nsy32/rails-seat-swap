@@ -1,7 +1,7 @@
 <div class="job-card">
   <%= link_to job_path(job), style: 'text-decoration: none; color: black;' do %>
     <div class="card-top">
-      <%= image_tag(job.photo.present? ? job.photo : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
+      <%= image_tag(job.photos.present? ? job.photos[0] : 'empty_image_placeholder.png', class: 'job-card-img', alt: 'Job Image') %>
     </div>
     <div class="card-bottom" style="text-align: left;">
       <h3><%= job.title %></h3>
