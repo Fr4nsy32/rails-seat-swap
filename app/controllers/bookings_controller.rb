@@ -11,14 +11,13 @@ class BookingsController < ApplicationController
   def new
     current_user
     @job = Job.find(params[:job_id])
-    @booking = Booking.new
+    @booking = Booking.new(start_date: @job.available_from)
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.job = Job.find(params[:job_id])
-    @booking.start_date = @booking.job.available_from
     if @booking.save
       redirect_to @booking, notice: "Booking was added was successfully created."
     else
@@ -34,7 +33,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to dashboard_path, notice: "Job was successfully updated."
+      redirect_to dashboard_path, notice: "Booking was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end

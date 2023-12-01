@@ -1,7 +1,7 @@
 <div class="card mb-3">
   <div class="card-body">
-    <h5 class="card-title">Review ID: <%= review.id %></h5>
-    <p class="card-text">Description: <%= review.description %></p>
+    <h5 class="card-title fw-bold"><%= review.title %></h5><em>For booking n°<%= review.booking.id %></em>
+    <p class="card-text"><%= review.description %></p>
     <div class="stars">
       <% 5.times do |i| %>
         <% if i < review.rating %>
@@ -9,5 +9,6 @@
         <% else %>
           <i class="far fa-star"></i> <!-- Empty star -->
         <% end %>
+      <% end %>
   </div>
 </div>
