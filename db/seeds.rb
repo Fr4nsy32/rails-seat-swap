@@ -50,7 +50,7 @@ Booking.create!(job: Job.all.sample, user: users.sample)
 Booking.create!(job: Job.all.sample, user: users.sample)
 Booking.create!(job: Job.all.sample, user: users.sample)
 
-Review.create!(booking: Booking.all.sample, description: 'Excellent graphic design skills! Loved working on this project.', rating: 5)
+Review.create!(title: "AMzing experience", booking: Booking.all.sample, description: 'Excellent graphic design skills! Loved working on this project.', rating: 5)
 # jobs = Job.all
 # Booking.create!(job: jobs[0], user: users[1], status: 'booked')
 

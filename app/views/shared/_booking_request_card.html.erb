@@ -11,8 +11,8 @@
   <% end %>
     <h5 class="card-title">Booking Request ID: <%= booking.id %></h5>
     <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
-    <p class="card-text"><%= booking.start_date %></p>
-    <p class="card-text"><%= booking.end_date %></p>
+    <p class="card-text"><em>Starting: </em> <%= booking.start_date.strftime("%A, %B %e %Y") %></p>
+    <p class="card-text"><em>Ending: </em><%= booking.end_date.strftime("%A, %B %e %Y") %></p>
     <p class="card-text"><%= booking.job.description %></p>
     <%# <p class="card-text"><%= booking.job.available %>
     <p class="card-text">Booking owner: <%= booking.job.user.first_name %></p>
