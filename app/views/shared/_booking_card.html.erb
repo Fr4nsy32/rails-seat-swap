@@ -1,6 +1,15 @@
 <a href="<%= job_path(booking.job) %>" class="card-link">
-  <div class="card mb-3 rounded">
-    <div class="card-body">
+<div class="card mb-3"  style="border-radius: 15px">
+  <% case booking.status
+   when "cancelled" %>
+  <div class="card-body cancelled">
+  <% when "pending" %>
+  <div class="card-body border border-warning">
+  <% when "completed" %>
+  <div class="card-body completed">
+  <% when "booked" %>
+  <div class="card-body border border-info">
+  <% end %>
       <h5 class="card-title">Booking ID: <%= booking.id %>
       <%= link_to booking_path(booking),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
