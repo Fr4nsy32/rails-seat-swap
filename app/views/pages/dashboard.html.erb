@@ -27,16 +27,18 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-12">
       <h2 style="font-family: 'Montserrat', sans-serif;">My Jobs</h2>
       <div class="d-flex flex-wrap">
         <% @my_jobs.each do |job| %>
-          <%= render partial: 'shared/job_card', locals: { job: job } %>
+          <%= render partial: 'shared/dashboard_job_card', locals: { job: job }, class: 'dashboard-job-card' %>
         <% end %>
       </div>
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-12">
