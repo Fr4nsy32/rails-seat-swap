@@ -69,3 +69,10 @@
     margin-bottom: 8px;
   }
 }
+.nav-link {
+  color: black;
+  font-weight: bold;
+  &:hover {
+    color: white;
+  }
+}

@@ -1,62 +1,74 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 mb-4" style="margin-left: 0; padding-left: 0;">
-      <h1 style="margin-left: 0; padding-left: 0; font-family: 'Montserrat', sans-serif;">Dashboard</h1>
-    </div>
+<div class="container" data-controller="tabs">
+  <!-- Onglets -->
+  <div class="tabs">
+    <div class="tab active-tab" data-action="click->tabs#changeTab" data-tabs-target="tab">All My Bookings</div>
+    <div class="tab" data-action="click->tabs#changeTab" data-tabs-target="tab">My Booking Requests</div>
+    <div class="tab" data-action="click->tabs#changeTab" data-tabs-target="tab">My Jobs</div>
+    <div class="tab" data-action="click->tabs#changeTab" data-tabs-target="tab">My Reviews</div>
+    <div class="tab" data-action="click->tabs#changeTab" data-tabs-target="tab">My Credits</div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <h2 style="font-family: 'Montserrat', sans-serif;">All My Bookings</h2>
-      <div class="d-flex flex-wrap">
-        <% @my_bookings.each do |booking| %>
-          <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
-        <% end %>
+  <!-- Contenu des Onglets -->
+  <div class="tab-content" data-tabs-target="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-family: 'Montserrat', sans-serif;">All My Bookings</h2>
+        <div class="d-flex flex-wrap">
+          <% @my_bookings.each do |booking| %>
+            <%= render partial: 'shared/booking_card', locals: { booking: booking } %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <h2 style="font-family: 'Montserrat', sans-serif;">My Booking Requests</h2>
-      <div class="d-flex flex-wrap">
-        <% @my_bookings_requests.each do |request| %>
-          <%= render partial: 'shared/booking_request_card', locals: { booking: request } %>
-        <% end %>
+  <div class="tab-content" data-tabs-target="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-family: 'Montserrat', sans-serif;">My Booking Requests</h2>
+        <div class="d-flex flex-wrap">
+          <% @my_bookings_requests.each do |request| %>
+            <%= render partial: 'shared/booking_request_card', locals: { booking: request } %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-
-  <div class="row">
-    <div class="col-12">
-      <h2 style="font-family: 'Montserrat', sans-serif;">My Jobs</h2>
-      <div class="d-flex flex-wrap">
-        <% @my_jobs.each do |job| %>
-          <%= render partial: 'shared/dashboard_job_card', locals: { job: job }, class: 'dashboard-job-card' %>
-        <% end %>
+  <div class="tab-content" data-tabs-target="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-family: 'Montserrat', sans-serif;">My Jobs</h2>
+        <div class="d-flex flex-wrap">
+          <% @my_jobs.each do |job| %>
+            <%= render partial: 'shared/dashboard_job_card', locals: { job: job }, class: 'dashboard-job-card' %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-
-  <div class="row">
-    <div class="col-12">
-      <h2 style="font-family: 'Montserrat', sans-serif;">My Reviews</h2>
-      <div class="d-flex flex-wrap">
-        <% @my_reviews.each do |review| %>
-          <%= render partial: 'shared/review_card', locals: { review: review } %>
-        <% end %>
+  <div class="tab-content" data-tabs-target="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-family: 'Montserrat', sans-serif;">My Reviews</h2>
+        <div class="d-flex flex-wrap">
+          <% @my_reviews.each do |review| %>
+            <%= render partial: 'shared/review_card', locals: { review: review } %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <h2 style="font-family: 'Montserrat', sans-serif;">My Credits</h2>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Current credit: <%= current_user.credit %></h5>
+  <div class="tab-content" data-tabs-target="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-family: 'Montserrat', sans-serif;">My Credits</h2>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Current credit: <%= current_user.credit %></h5>
+          </div>
         </div>
       </div>
     </div>
