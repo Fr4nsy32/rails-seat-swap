@@ -14,7 +14,7 @@
 @import "jobs/new";
 
 .job-card {
-  width: calc(33.33% - 40px); /* 40px is the combined margin and padding */
+  width: calc(33.33% - 40px);
   margin: 20px;
   padding: 15px;
   border: 1px solid #ccc;
@@ -23,18 +23,18 @@
   background-color: #fff;
   text-align: left;
   overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.job-card:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .job-card {
     width: calc(50% - 40px);
   }
-}
-
-.job-card-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 
@@ -86,9 +86,14 @@
 }
 
 body {
-  background-color: rgba(255, 245, 225, 0.8); /* Very light pastel orange color with 80% opacity */
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('your-background-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .banner-container {
   background-color: rgba(224, 224, 224, 0.8); /* Light grey pastel color with 80% opacity */
 }
+
