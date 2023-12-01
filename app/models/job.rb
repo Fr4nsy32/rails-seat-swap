@@ -6,7 +6,7 @@ class Job < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
   has_many_attached :photos
-  validates :available_from, presence: true
+  # validates :available_from, presence: true
 end
 
 # <%# <%= link_to "Edit", edit_job_path %>

@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.job = Job.find(params[:job_id])
     if @booking.save
-      redirect_to @booking, notice: "Booking was added was successfully created."
+      redirect_to dashboard_path, notice: "Booking was added was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
