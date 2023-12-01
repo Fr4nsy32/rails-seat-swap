@@ -1,7 +1,12 @@
-body {
-  font-family: 'Arial', sans-serif;
+.banner-container {
   background-image: url('assets/NY.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 300px; // Adjust the height as needed
+  width: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
 }
