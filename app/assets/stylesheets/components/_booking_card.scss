@@ -56,3 +56,24 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.pending {
+  box-shadow: 2px 2px 5px orange;
+  border: 1px solid orange;
+  border-radius: 15px;
+}
+
+.booked {
+  box-shadow: 2px 2px 5px lightseagreen;
+  border: 1px solid lightseagreen;
+  border-radius: 15px;
+}
