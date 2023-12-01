@@ -5,7 +5,7 @@
       <p class="job-description"><%= @job.description %></p>
       <p class="job-price"><strong>Price:</strong> <%= @job.price %></p>
       <p class="job-address"><strong>Address:</strong> <%= @job.address %></p>
-      <p class="job-available-from"><strong>Available From:</strong> <%= @job.available_from %></p>
+      <p class="job-available-from"><strong>Available From:</strong> <%= @job.available_from.strftime("%A, %B %e %Y") %></p>
       <p class="job-credit-to-earn"><strong>Credit to Earn:</strong> <%= @job.credit_to_earn %></p>
        <% if current_user == @job.user %>
       <%= link_to job_path(@job),

@@ -1,6 +1,6 @@
 <div class="card mb-3">
   <div class="card-body">
-    <h5 class="card-title fw-bold"><%= review.title %></h5><em>For booking n°<%= review.booking.id %></em>
+    <h5 class="card-title fw-bold"><%= review.title %></h5><em>For <%= link_to review.booking.job.title, job_path(review.booking.job) %></em>
     <p class="card-text"><%= review.description %></p>
     <div class="stars">
       <% 5.times do |i| %>

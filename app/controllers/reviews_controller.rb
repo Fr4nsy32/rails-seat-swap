@@ -1,21 +1,16 @@
 class ReviewsController < ApplicationController
   def new
-    #@job = Job.find(params[:job_id])
-    #@booking = Booking.find(params[:booking_id])
-    #@review = @booking.reviews.build
+    @job = Job.find(params[:job_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
 def create
-    #@job = Job.find(params[:job_id])
-    #@booking = Booking.find(params[:booking_id])
-    #@review = @booking.reviews.build(review_params)
     @review = Review.new(review_params)
-    @review.job = @job
-    @review.user = current_user
+    @review.booking = Booking.find(params[:booking_id])
 
     if @review.save
-      redirect_to job_path(@job), notice: "Review created successfully."
+      redirect_to dashboard_path, notice: "Review created successfully."
     else
       render :new
     end
@@ -24,7 +19,7 @@ def create
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content)
+    params.require(:review).permit(:title, :rating, :description)
   end
 end
 
