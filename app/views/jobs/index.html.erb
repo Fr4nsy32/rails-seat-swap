@@ -4,8 +4,8 @@
   <% @jobs.each do |job| %>
     <% if job.available %>
       <%= link_to job_path(job), class: "job-card" do %>
-        <% if job.photo.attached? %>
-          <%= image_tag url_for(job.photo), class: "job-card-img", alt: "Job Image" %>
+        <% if job.photos.present? %>
+          <%= image_tag url_for(job.photos[0]), class: "job-card-img", alt: "Job Image" %>
         <% else %>
           <%= image_tag('empty_image_placeholder.png', class: "avatar", alt: "Job Image") %>
         <% end %>
