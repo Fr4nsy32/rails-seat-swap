@@ -4,6 +4,7 @@
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :price %>
+     <%= f.file_field :photo %>
     <%= f.input :available_from,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
