@@ -7,8 +7,8 @@
         <i class="fa-solid fa-trash ms-2" id="del"></i></h5>
       <% end %>
       <p class="card-text"><%= link_to booking.job.title, job_path(booking.job) %></p>
-      <p class="card-text"><%= booking.start_date %></p>
-      <p class="card-text"><%= booking.end_date %></p>
+    <p class="card-text"><em>Starting: </em> <%= booking.start_date.strftime("%A, %B %e %Y") %></p>
+    <p class="card-text"><em>Ending: </em><%= booking.end_date.strftime("%A, %B %e %Y") %></p>
       <p class="card-text"><%= booking.job.description %></p>
       <p class="card-text">Status: <%= booking.status %></p>
       <% if booking.job.user.present? %>
